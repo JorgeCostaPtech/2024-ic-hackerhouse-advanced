@@ -593,6 +593,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "40ecd4077b5ae9fd2e9e169b102c6c330d0605168eb0e8bf79952b256dbefffd"
 
 [[package]]
+name = "gpt-encoder"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bb9cc0ea640dc6a90540a26867122c777eaac04cef4796feb6d13af431a2908b"
+dependencies = [
+ "regex",
+ "serde_json",
+]
+
+[[package]]
 name = "h2"
 version = "0.4.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -910,8 +920,13 @@ name = "icp_hello_world_rust_backend"
 version = "0.1.0"
 dependencies = [
  "candid",
+ "gpt-encoder",
  "ic-cdk 0.12.2",
+ "ic-cdk-timers",
+ "ic-stable-structures",
  "pocket-ic",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]

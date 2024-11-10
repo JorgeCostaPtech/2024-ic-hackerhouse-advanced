@@ -1,3 +1,15 @@
+type ChatMessage = record {
+    sender: principal;
+    content: text;
+    timestamp: nat64;
+};
+
+type Result = variant { Ok: text; Err: text };
+
 service : {
-    "greet": (text) -> (text) query;
+    get_chat_messages_api: () -> (vec ChatMessage) query;
+    set_global_context_api: (text) -> ();
+    get_global_context_api: () -> (text) query;
+    generate_text: (text) -> (Result);
+    get_chat_history_api: () -> (vec ChatMessage) query;
 }
